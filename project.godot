@@ -1,0 +1,43 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
+[application]
+
+config/name="Launcher Pampa GameDevs"
+config/version="0.1"
+run/main_scene="uid://dysybabi04p0g"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/stretch_mode=0
+boot_splash/image="uid://bqs58ylv4gkm4"
+config/icon="res://icon.svg"
+boot_splash/minimum_display_time=500
+
+[autoload]
+
+GamesController="*res://controllers/GamesController.gd"
+StudiosController="*res://controllers/StudiosController.gd"
+CategoriesController="*res://controllers/CategoriesController.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/mode=3
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

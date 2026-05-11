@@ -1,0 +1,26 @@
+[
+  {
+	"id": "action",
+	"name": "Acción",
+	"description": "Juegos de acción y aventura",
+	"color": "#FF5722"
+  },
+  {
+	"id": "puzzle",
+	"name": "Puzzle",
+	"description": "Juegos de rompecabezas y lógica",
+	"color": "#4CAF50"
+  },
+  {
+	"id": "platformer",
+	"name": "Plataforma",
+	"description": "Juegos de plataformas",
+	"color": "#2196F3"
+  },
+  {
+	"id": "rpg",
+	"name": "RPG",
+	"description": "Juegos de rol",
+	"color": "#9C27B0"
+  }
+]

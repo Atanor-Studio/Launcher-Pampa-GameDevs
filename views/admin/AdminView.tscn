@@ -1,0 +1,584 @@
+[gd_scene load_steps=8 format=3 uid="uid://i3cynxfotdhn"]
+
+[ext_resource type="Script" uid="uid://c632v5675k4t6" path="res://views/admin/AdminView.gd" id="1_welph"]
+[ext_resource type="Theme" uid="uid://bqq2ajhcvs3e2" path="res://assets/Theme.tres" id="2_d1530"]
+[ext_resource type="Script" uid="uid://dpadx0l0aq8ak" path="res://views/admin/AdminAuth.gd" id="2_hajcm"]
+[ext_resource type="Script" uid="uid://4b6e8s5aeye4" path="res://views/admin/AdminGame.gd" id="3_l646j"]
+[ext_resource type="Script" uid="uid://crq8icmf0hi5a" path="res://views/admin/AdminStudio.gd" id="4_uuyvw"]
+[ext_resource type="Script" uid="uid://cf6ohlt0dliue" path="res://views/admin/AdminCategories.gd" id="5_l646j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d1530"]
+
+[node name="AdminView" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_welph")
+
+[node name="BG" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.882353)
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -250.0
+offset_right = 350.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_d1530")
+tab_alignment = 1
+current_tab = 0
+tab_focus_mode = 0
+
+[node name="Auth" type="Panel" parent="TabContainer"]
+layout_mode = 2
+script = ExtResource("2_hajcm")
+metadata/_tab_index = 0
+
+[node name="VBox" type="VBoxContainer" parent="TabContainer/Auth"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Title" type="Label" parent="TabContainer/Auth/VBox"]
+layout_mode = 2
+text = "Login de Administrador"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PasswordInput" type="LineEdit" parent="TabContainer/Auth/VBox"]
+layout_mode = 2
+placeholder_text = "Contraseña"
+alignment = 1
+max_length = 25
+secret = true
+
+[node name="ErrorLabel" type="Label" parent="TabContainer/Auth/VBox"]
+visible = false
+modulate = Color(1, 0.5, 0.5, 1)
+layout_mode = 2
+text = "Error: Contraseña incorrecta"
+horizontal_alignment = 1
+
+[node name="SessionInfo" type="Label" parent="TabContainer/Auth/VBox"]
+visible = false
+modulate = Color(0.5, 1, 0.5, 1)
+layout_mode = 2
+text = "Sesión activa"
+horizontal_alignment = 1
+
+[node name="Login" type="Control" parent="TabContainer/Auth/VBox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="LoginButton" type="Button" parent="TabContainer/Auth/VBox/Login"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.5
+offset_top = -15.5
+offset_right = 55.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Iniciar Sesión"
+
+[node name="Juego" type="Panel" parent="TabContainer"]
+visible = false
+layout_mode = 2
+script = ExtResource("3_l646j")
+metadata/_tab_index = 1
+
+[node name="Items" type="VBoxContainer" parent="TabContainer/Juego"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -225.0
+offset_right = 250.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Modes" type="HBoxContainer" parent="TabContainer/Juego/Items"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="NewGameButton" type="Button" parent="TabContainer/Juego/Items/Modes"]
+layout_mode = 2
+disabled = true
+text = "Nuevo"
+
+[node name="SelectGameButton" type="Button" parent="TabContainer/Juego/Items/Modes"]
+layout_mode = 2
+text = "Seleccionar"
+
+[node name="Title" type="Label" parent="TabContainer/Juego/Items"]
+layout_mode = 2
+text = "Agregar nuevo juego"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name" type="HBoxContainer" parent="TabContainer/Juego/Items"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Juego/Items/Name"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Título"
+horizontal_alignment = 2
+
+[node name="Input" type="LineEdit" parent="TabContainer/Juego/Items/Name"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Desc" type="HBoxContainer" parent="TabContainer/Juego/Items"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Juego/Items/Desc"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Descripción"
+horizontal_alignment = 2
+
+[node name="Input" type="LineEdit" parent="TabContainer/Juego/Items/Desc"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Studio" type="HBoxContainer" parent="TabContainer/Juego/Items"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Juego/Items/Studio"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Estudio"
+horizontal_alignment = 2
+
+[node name="SeleccionarBtn" type="Button" parent="TabContainer/Juego/Items/Studio"]
+layout_mode = 2
+text = "Seleccionar"
+
+[node name="StudioName" type="Label" parent="TabContainer/Juego/Items/Studio"]
+layout_mode = 2
+vertical_alignment = 1
+
+[node name="Categories" type="HBoxContainer" parent="TabContainer/Juego/Items"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Juego/Items/Categories"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Categorias"
+horizontal_alignment = 2
+
+[node name="SeleccionarBtn" type="Button" parent="TabContainer/Juego/Items/Categories"]
+layout_mode = 2
+text = "Seleccionar"
+
+[node name="Exe" type="HBoxContainer" parent="TabContainer/Juego/Items"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Juego/Items/Exe"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Exe"
+horizontal_alignment = 2
+
+[node name="Input" type="LineEdit" parent="TabContainer/Juego/Items/Exe"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Haz clic aquí para seleccionar archivo ejecutable..."
+
+[node name="Cover" type="HBoxContainer" parent="TabContainer/Juego/Items"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Juego/Items/Cover"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Portada"
+horizontal_alignment = 2
+
+[node name="Input" type="LineEdit" parent="TabContainer/Juego/Items/Cover"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Haz clic aquí para seleccionar imagen de portada..."
+
+[node name="AddButton" type="Control" parent="TabContainer/Juego/Items"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="TabContainer/Juego/Items/AddButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = -15.5
+offset_right = 34.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+text = "Agregar"
+
+[node name="FileDialog" type="FileDialog" parent="TabContainer/Juego/Items"]
+auto_translate_mode = 1
+access = 2
+
+[node name="StudiosList" type="Panel" parent="TabContainer/Juego"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -97.0
+offset_right = 400.0
+offset_bottom = 113.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="TabContainer/Juego/StudiosList"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.784314)
+
+[node name="VBox" type="VBoxContainer" parent="TabContainer/Juego/StudiosList"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cancelar" type="Control" parent="TabContainer/Juego/StudiosList/VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="TabContainer/Juego/StudiosList/VBox/Cancelar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -15.5
+offset_right = 38.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Cancelar"
+
+[node name="Search" type="LineEdit" parent="TabContainer/Juego/StudiosList/VBox"]
+layout_mode = 2
+placeholder_text = "Nombre del estudio"
+alignment = 1
+
+[node name="CategoriesList" type="Panel" parent="TabContainer/Juego"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -175.0
+offset_right = 400.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="TabContainer/Juego/CategoriesList"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.784314)
+
+[node name="VBox" type="VBoxContainer" parent="TabContainer/Juego/CategoriesList"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cerrar" type="Control" parent="TabContainer/Juego/CategoriesList/VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="TabContainer/Juego/CategoriesList/VBox/Cerrar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -15.5
+offset_right = 38.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Cerrar"
+
+[node name="Search" type="LineEdit" parent="TabContainer/Juego/CategoriesList/VBox"]
+layout_mode = 2
+placeholder_text = "Filtrar categoria"
+alignment = 1
+
+[node name="Container" type="ScrollContainer" parent="TabContainer/Juego/CategoriesList/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Grid" type="GridContainer" parent="TabContainer/Juego/CategoriesList/VBox/Container"]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 9
+columns = 4
+
+[node name="Estudio" type="Panel" parent="TabContainer"]
+visible = false
+layout_mode = 2
+script = ExtResource("4_uuyvw")
+metadata/_tab_index = 2
+
+[node name="Items" type="VBoxContainer" parent="TabContainer/Estudio"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -225.0
+offset_right = 250.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(425, 250)
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Estudio/Items"]
+layout_mode = 2
+text = "Agregar nuevo estudio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name" type="HBoxContainer" parent="TabContainer/Estudio/Items"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Estudio/Items/Name"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Nombre"
+horizontal_alignment = 2
+
+[node name="Input" type="LineEdit" parent="TabContainer/Estudio/Items/Name"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Description" type="HBoxContainer" parent="TabContainer/Estudio/Items"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Estudio/Items/Description"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Descripción"
+horizontal_alignment = 2
+
+[node name="Input" type="LineEdit" parent="TabContainer/Estudio/Items/Description"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Website" type="HBoxContainer" parent="TabContainer/Estudio/Items"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Estudio/Items/Website"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Sitio web"
+horizontal_alignment = 2
+
+[node name="Input" type="LineEdit" parent="TabContainer/Estudio/Items/Website"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Logo" type="HBoxContainer" parent="TabContainer/Estudio/Items"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Estudio/Items/Logo"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Logo"
+horizontal_alignment = 2
+
+[node name="Input" type="LineEdit" parent="TabContainer/Estudio/Items/Logo"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Cover" type="HBoxContainer" parent="TabContainer/Estudio/Items"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Estudio/Items/Cover"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Portada"
+horizontal_alignment = 2
+
+[node name="Input" type="LineEdit" parent="TabContainer/Estudio/Items/Cover"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AddButton" type="Control" parent="TabContainer/Estudio/Items"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="TabContainer/Estudio/Items/AddButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = -15.5
+offset_right = 34.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+text = "Agregar"
+
+[node name="FileDialog" type="FileDialog" parent="TabContainer/Estudio/Items"]
+auto_translate_mode = 1
+access = 2
+
+[node name="Categorias" type="Panel" parent="TabContainer"]
+visible = false
+layout_mode = 2
+script = ExtResource("5_l646j")
+metadata/_tab_index = 3
+
+[node name="Selected" type="HBoxContainer" parent="TabContainer/Categorias"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 16.0
+offset_bottom = 61.0
+grow_horizontal = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Option" type="VBoxContainer" parent="TabContainer/Categorias/Selected"]
+layout_mode = 2
+alignment = 1
+
+[node name="New" type="Button" parent="TabContainer/Categorias/Selected/Option"]
+layout_mode = 2
+disabled = true
+text = "Nueva"
+
+[node name="Selected" type="Button" parent="TabContainer/Categorias/Selected/Option"]
+layout_mode = 2
+text = "Seleccionada"
+
+[node name="Names" type="VBoxContainer" parent="TabContainer/Categorias/Selected"]
+layout_mode = 2
+alignment = 1
+
+[node name="NameLine" type="LineEdit" parent="TabContainer/Categorias/Selected/Names"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+placeholder_text = "Nombre visible"
+alignment = 1
+
+[node name="IDLine" type="LineEdit" parent="TabContainer/Categorias/Selected/Names"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+placeholder_text = "ID"
+alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="TabContainer/Categorias/Selected"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="ColorButton" type="ColorPickerButton" parent="TabContainer/Categorias/Selected/Buttons"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d1530")
+text = "Prueba"
+edit_alpha = false
+
+[node name="AddSave" type="Button" parent="TabContainer/Categorias/Selected/Buttons"]
+layout_mode = 2
+text = "CREAR"
+
+[node name="Scroll" type="ScrollContainer" parent="TabContainer/Categorias"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -370.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Grid" type="GridContainer" parent="TabContainer/Categorias/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 4
+
+[node name="Close" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -116.0
+offset_top = 56.0
+offset_right = -56.0
+offset_bottom = 116.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 35
+text = "X"

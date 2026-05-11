@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://5dn18av3mq22"]
+
+[ext_resource type="Script" uid="uid://b7ldc83fijpyi" path="res://views/components/ItemEntry.gd" id="1_qdk2n"]
+[ext_resource type="Texture2D" uid="uid://dpfk0jru364or" path="res://assets/Mask.png" id="2_ajwv7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4wcq7"]
+line_spacing = 0.0
+font_size = 24
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.392157)
+
+[node name="ItemEntry" type="Panel"]
+custom_minimum_size = Vector2(200, 250)
+offset_right = 200.0
+offset_bottom = 250.0
+pivot_offset = Vector2(100, 125)
+script = ExtResource("1_qdk2n")
+
+[node name="Item" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cover" type="TextureRect" parent="Item"]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ajwv7")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Image" type="TextureRect" parent="Item/Cover"]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Title" type="Label" parent="Item"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = -10.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "{title}"
+label_settings = SubResource("LabelSettings_4wcq7")
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+flat = true

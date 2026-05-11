@@ -1,0 +1,297 @@
+[gd_scene format=3 uid="uid://dysybabi04p0g"]
+
+[ext_resource type="Script" uid="uid://rrke5lm8rcah" path="res://views/Launcher.gd" id="1_b8hry"]
+[ext_resource type="Theme" uid="uid://bqq2ajhcvs3e2" path="res://assets/Theme.tres" id="2_32x1t"]
+[ext_resource type="Texture2D" uid="uid://bqs58ylv4gkm4" path="res://assets/Pampa Game Devs.png" id="2_dyt4f"]
+[ext_resource type="Texture2D" uid="uid://0g3u4t37jjyr" path="res://assets/Background.jpg" id="2_nx70a"]
+[ext_resource type="PackedScene" uid="uid://rdfxfc3luoe6" path="res://views/DataView.tscn" id="3_r31o7"]
+[ext_resource type="PackedScene" uid="uid://i3cynxfotdhn" path="res://views/admin/AdminView.tscn" id="4_y2og5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ytcfr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nx70a"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nx70a"]
+content_margin_left = 9.0
+content_margin_top = 9.0
+content_margin_right = 9.0
+content_margin_bottom = 9.0
+bg_color = Color(0, 0, 0, 0.784314)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[node name="Launcher" type="CanvasLayer" unique_id=834135006]
+script = ExtResource("1_b8hry")
+
+[node name="BG" type="ColorRect" parent="." unique_id=1229243802]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.000391201, 0, 0.0767233, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1220096412]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nx70a")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="Container" type="VBoxContainer" parent="." unique_id=1523041299]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_32x1t")
+
+[node name="Banner" type="Control" parent="Container" unique_id=1083666552]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="BG" type="ColorRect" parent="Container/Banner" unique_id=1723020350]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Nav" type="HBoxContainer" parent="Container/Banner" unique_id=760136063]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_right = 820.0
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Logo" type="Control" parent="Container/Banner/Nav" unique_id=287355115]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Image" type="TextureRect" parent="Container/Banner/Nav/Logo" unique_id=86991790]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.9036
+offset_top = -26.5
+offset_right = 75.9036
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dyt4f")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Games" type="Control" parent="Container/Banner/Nav" unique_id=1013158050]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Container/Banner/Nav/Games" unique_id=749813692]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 15.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+text = "Juegos"
+
+[node name="Studios" type="Control" parent="Container/Banner/Nav" unique_id=1326890586]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Container/Banner/Nav/Studios" unique_id=228496595]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 15.0
+offset_right = -20.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+text = "Estudios"
+
+[node name="AdminBtn" type="Button" parent="Container/Banner" unique_id=130558686]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -110.0
+offset_top = 15.0
+offset_right = -35.0
+offset_bottom = 70.0
+grow_horizontal = 0
+focus_mode = 0
+theme_override_font_sizes/font_size = 12
+text = "Admin"
+
+[node name="Search" type="Control" parent="Container" unique_id=1874874264]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="Container/Search" unique_id=167566367]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 5.0
+offset_right = -20.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="FilterBtn" type="Button" parent="Container/Search/HBox" unique_id=768535557]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+tooltip_text = "Filtrar por categorias"
+text = "C"
+
+[node name="SortOption" type="OptionButton" parent="Container/Search/HBox" unique_id=11185743]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+tooltip_text = "Ordenar juegos por..."
+alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Container/Search/HBox" unique_id=2058765723]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ytcfr")
+placeholder_text = "Filtrar"
+
+[node name="ItemList" type="Control" parent="Container" unique_id=805495295]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ItemsPanel" type="Panel" parent="Container/ItemList" unique_id=809955318]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_right = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Items" type="ScrollContainer" parent="Container/ItemList/ItemsPanel" unique_id=1088966256]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -3.0
+offset_right = 10.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nx70a")
+horizontal_scroll_mode = 0
+
+[node name="Grid" type="GridContainer" parent="Container/ItemList/ItemsPanel/Items" unique_id=177700959]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme_override_constants/h_separation = 9
+theme_override_constants/v_separation = 9
+columns = 6
+
+[node name="CategoriesPanel" type="PanelContainer" parent="Container/ItemList" unique_id=2120083625]
+visible = false
+z_index = 99
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_right = -20.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nx70a")
+
+[node name="VBox" type="VBoxContainer" parent="Container/ItemList/CategoriesPanel" unique_id=852245693]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Container/ItemList/CategoriesPanel/VBox" unique_id=1708134692]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Filtrar por Categorias"
+horizontal_alignment = 1
+
+[node name="Grid" type="GridContainer" parent="Container/ItemList/CategoriesPanel/VBox" unique_id=312703991]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 10
+columns = 7
+
+[node name="Footer" type="Control" parent="Container" unique_id=1384705328]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="BG" type="ColorRect" parent="Container/Footer" unique_id=1670114065]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.882353)
+
+[node name="Credits" type="Label" parent="Container/Footer" unique_id=831460326]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Desarrollado por Atanor Studio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Version" type="Label" parent="Container/Footer" unique_id=367020554]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_right = -3.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "v0.1"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="DataView" parent="." unique_id=2043980932 instance=ExtResource("3_r31o7")]
+visible = false
+
+[node name="AdminView" parent="." unique_id=496987752 instance=ExtResource("4_y2og5")]
+visible = false
