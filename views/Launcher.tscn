@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://bqq2ajhcvs3e2" path="res://assets/Theme.tres" id="2_32x1t"]
 [ext_resource type="Texture2D" uid="uid://bqs58ylv4gkm4" path="res://assets/Pampa Game Devs.png" id="2_dyt4f"]
 [ext_resource type="Texture2D" uid="uid://0g3u4t37jjyr" path="res://assets/Background.jpg" id="2_nx70a"]
-[ext_resource type="PackedScene" uid="uid://rdfxfc3luoe6" path="res://views/DataView.tscn" id="3_r31o7"]
+[ext_resource type="PackedScene" uid="uid://rdfxfc3luoe6" path="res://views/components/DataView.tscn" id="3_r31o7"]
 [ext_resource type="PackedScene" uid="uid://i3cynxfotdhn" path="res://views/admin/AdminView.tscn" id="4_y2og5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ytcfr"]
@@ -30,7 +30,6 @@ corner_radius_bottom_left = 9
 script = ExtResource("1_b8hry")
 
 [node name="BG" type="ColorRect" parent="." unique_id=1229243802]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -213,10 +212,10 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_nx70a")
 horizontal_scroll_mode = 0
 
 [node name="Grid" type="GridContainer" parent="Container/ItemList/ItemsPanel/Items" unique_id=177700959]
-layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 2
+layout_direction = 2
 theme_override_constants/h_separation = 9
 theme_override_constants/v_separation = 9
 columns = 6
@@ -265,14 +264,15 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.882353)
 
-[node name="Credits" type="Label" parent="Container/Footer" unique_id=831460326]
+[node name="Credits" type="RichTextLabel" parent="Container/Footer" unique_id=882473866]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Desarrollado por Atanor Studio"
+bbcode_enabled = true
+text = "Desarrollado por  [img height=1.25em]res://assets/Atanor_Studio.png[/img]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -286,7 +286,7 @@ offset_left = -35.0
 offset_right = -3.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "v0.1"
+text = "v0.2.0-a"
 horizontal_alignment = 2
 vertical_alignment = 2
 

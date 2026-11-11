@@ -1,15 +1,1 @@
-[
-	{
-		"category_ids": [
-			"action"
-		],
-		"cover_path": "C:/Users/Axel/Documents/Proyectos/Launcher Pampa GameDevs/Games/Miaufo/Portada.png",
-		"description": "GOTY",
-		"exe_path": "C:/Users/Axel/Documents/Proyectos/Launcher Pampa GameDevs/Games/Miaufo/Miaufo.exe",
-		"id": "miaufo",
-		"name": "Miaufo",
-		"release_date": "2026-05-11T00:00:00",
-		"studio_id": "tres_studio",
-		"version": "1.0.0"
-	}
-]
+[]

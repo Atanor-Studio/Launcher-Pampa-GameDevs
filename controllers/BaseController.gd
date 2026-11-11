@@ -31,6 +31,8 @@ func _ready():
 
 func load_items():
 	items.clear()
+	# Asegura que existan data/ y sus JSON antes de leer (primer arranque)
+	FileUtils.ensure_data_structure()
 	var file_path = FileUtils.get_data_path(get_file_name())
 	var item_type = get_item_type_name()
 	

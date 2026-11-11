@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://i3cynxfotdhn"]
+[gd_scene format=3 uid="uid://i3cynxfotdhn"]
 
 [ext_resource type="Script" uid="uid://c632v5675k4t6" path="res://views/admin/AdminView.gd" id="1_welph"]
 [ext_resource type="Theme" uid="uid://bqq2ajhcvs3e2" path="res://assets/Theme.tres" id="2_d1530"]
@@ -9,17 +9,17 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d1530"]
 
-[node name="AdminView" type="CanvasLayer"]
+[node name="AdminView" type="CanvasLayer" unique_id=1494556534]
 layer = 2
 script = ExtResource("1_welph")
 
-[node name="BG" type="ColorRect" parent="."]
+[node name="BG" type="ColorRect" parent="." unique_id=2139983545]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0, 0, 0, 0.882353)
 
-[node name="TabContainer" type="TabContainer" parent="."]
+[node name="TabContainer" type="TabContainer" parent="." unique_id=1376130586]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -33,15 +33,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_d1530")
 tab_alignment = 1
-current_tab = 0
+current_tab = 2
 tab_focus_mode = 0
 
-[node name="Auth" type="Panel" parent="TabContainer"]
+[node name="Auth" type="Panel" parent="TabContainer" unique_id=1907874397]
+visible = false
 layout_mode = 2
 script = ExtResource("2_hajcm")
 metadata/_tab_index = 0
 
-[node name="VBox" type="VBoxContainer" parent="TabContainer/Auth"]
+[node name="VBox" type="VBoxContainer" parent="TabContainer/Auth" unique_id=784892924]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,38 +56,38 @@ grow_vertical = 2
 theme_override_constants/separation = 25
 alignment = 1
 
-[node name="Title" type="Label" parent="TabContainer/Auth/VBox"]
+[node name="Title" type="Label" parent="TabContainer/Auth/VBox" unique_id=176234817]
 layout_mode = 2
 text = "Login de Administrador"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PasswordInput" type="LineEdit" parent="TabContainer/Auth/VBox"]
+[node name="PasswordInput" type="LineEdit" parent="TabContainer/Auth/VBox" unique_id=141920338]
 layout_mode = 2
 placeholder_text = "Contraseña"
 alignment = 1
 max_length = 25
 secret = true
 
-[node name="ErrorLabel" type="Label" parent="TabContainer/Auth/VBox"]
+[node name="ErrorLabel" type="Label" parent="TabContainer/Auth/VBox" unique_id=485873661]
 visible = false
 modulate = Color(1, 0.5, 0.5, 1)
 layout_mode = 2
 text = "Error: Contraseña incorrecta"
 horizontal_alignment = 1
 
-[node name="SessionInfo" type="Label" parent="TabContainer/Auth/VBox"]
+[node name="SessionInfo" type="Label" parent="TabContainer/Auth/VBox" unique_id=898366358]
 visible = false
 modulate = Color(0.5, 1, 0.5, 1)
 layout_mode = 2
 text = "Sesión activa"
 horizontal_alignment = 1
 
-[node name="Login" type="Control" parent="TabContainer/Auth/VBox"]
+[node name="Login" type="Control" parent="TabContainer/Auth/VBox" unique_id=928065490]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="LoginButton" type="Button" parent="TabContainer/Auth/VBox/Login"]
+[node name="LoginButton" type="Button" parent="TabContainer/Auth/VBox/Login" unique_id=63129992]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -101,13 +102,13 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Iniciar Sesión"
 
-[node name="Juego" type="Panel" parent="TabContainer"]
+[node name="Juego" type="Panel" parent="TabContainer" unique_id=1620079510]
 visible = false
 layout_mode = 2
 script = ExtResource("3_l646j")
 metadata/_tab_index = 1
 
-[node name="Items" type="VBoxContainer" parent="TabContainer/Juego"]
+[node name="Items" type="VBoxContainer" parent="TabContainer/Juego" unique_id=1959975530]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -122,116 +123,116 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Modes" type="HBoxContainer" parent="TabContainer/Juego/Items"]
+[node name="Modes" type="HBoxContainer" parent="TabContainer/Juego/Items" unique_id=1709636025]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="NewGameButton" type="Button" parent="TabContainer/Juego/Items/Modes"]
+[node name="NewGameButton" type="Button" parent="TabContainer/Juego/Items/Modes" unique_id=1823902147]
 layout_mode = 2
 disabled = true
 text = "Nuevo"
 
-[node name="SelectGameButton" type="Button" parent="TabContainer/Juego/Items/Modes"]
+[node name="SelectGameButton" type="Button" parent="TabContainer/Juego/Items/Modes" unique_id=2019728622]
 layout_mode = 2
 text = "Seleccionar"
 
-[node name="Title" type="Label" parent="TabContainer/Juego/Items"]
+[node name="Title" type="Label" parent="TabContainer/Juego/Items" unique_id=1309438717]
 layout_mode = 2
 text = "Agregar nuevo juego"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Name" type="HBoxContainer" parent="TabContainer/Juego/Items"]
+[node name="Name" type="HBoxContainer" parent="TabContainer/Juego/Items" unique_id=2008838119]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Juego/Items/Name"]
+[node name="Label" type="Label" parent="TabContainer/Juego/Items/Name" unique_id=2009321786]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Título"
 horizontal_alignment = 2
 
-[node name="Input" type="LineEdit" parent="TabContainer/Juego/Items/Name"]
+[node name="Input" type="LineEdit" parent="TabContainer/Juego/Items/Name" unique_id=932465006]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Desc" type="HBoxContainer" parent="TabContainer/Juego/Items"]
+[node name="Desc" type="HBoxContainer" parent="TabContainer/Juego/Items" unique_id=962926631]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Juego/Items/Desc"]
+[node name="Label" type="Label" parent="TabContainer/Juego/Items/Desc" unique_id=1273446069]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Descripción"
 horizontal_alignment = 2
 
-[node name="Input" type="LineEdit" parent="TabContainer/Juego/Items/Desc"]
+[node name="Input" type="LineEdit" parent="TabContainer/Juego/Items/Desc" unique_id=178493818]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Studio" type="HBoxContainer" parent="TabContainer/Juego/Items"]
+[node name="Studio" type="HBoxContainer" parent="TabContainer/Juego/Items" unique_id=1054635633]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Juego/Items/Studio"]
+[node name="Label" type="Label" parent="TabContainer/Juego/Items/Studio" unique_id=325833045]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Estudio"
 horizontal_alignment = 2
 
-[node name="SeleccionarBtn" type="Button" parent="TabContainer/Juego/Items/Studio"]
+[node name="SeleccionarBtn" type="Button" parent="TabContainer/Juego/Items/Studio" unique_id=1724797807]
 layout_mode = 2
 text = "Seleccionar"
 
-[node name="StudioName" type="Label" parent="TabContainer/Juego/Items/Studio"]
+[node name="StudioName" type="Label" parent="TabContainer/Juego/Items/Studio" unique_id=1143557676]
 layout_mode = 2
 vertical_alignment = 1
 
-[node name="Categories" type="HBoxContainer" parent="TabContainer/Juego/Items"]
+[node name="Categories" type="HBoxContainer" parent="TabContainer/Juego/Items" unique_id=1240944330]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Juego/Items/Categories"]
+[node name="Label" type="Label" parent="TabContainer/Juego/Items/Categories" unique_id=1499520174]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Categorias"
 horizontal_alignment = 2
 
-[node name="SeleccionarBtn" type="Button" parent="TabContainer/Juego/Items/Categories"]
+[node name="SeleccionarBtn" type="Button" parent="TabContainer/Juego/Items/Categories" unique_id=1516369669]
 layout_mode = 2
 text = "Seleccionar"
 
-[node name="Exe" type="HBoxContainer" parent="TabContainer/Juego/Items"]
+[node name="Exe" type="HBoxContainer" parent="TabContainer/Juego/Items" unique_id=1327672916]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Juego/Items/Exe"]
+[node name="Label" type="Label" parent="TabContainer/Juego/Items/Exe" unique_id=729342709]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Exe"
 horizontal_alignment = 2
 
-[node name="Input" type="LineEdit" parent="TabContainer/Juego/Items/Exe"]
+[node name="Input" type="LineEdit" parent="TabContainer/Juego/Items/Exe" unique_id=1030322609]
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Haz clic aquí para seleccionar archivo ejecutable..."
 
-[node name="Cover" type="HBoxContainer" parent="TabContainer/Juego/Items"]
+[node name="Cover" type="HBoxContainer" parent="TabContainer/Juego/Items" unique_id=631520590]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Juego/Items/Cover"]
+[node name="Label" type="Label" parent="TabContainer/Juego/Items/Cover" unique_id=962571615]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Portada"
 horizontal_alignment = 2
 
-[node name="Input" type="LineEdit" parent="TabContainer/Juego/Items/Cover"]
+[node name="Input" type="LineEdit" parent="TabContainer/Juego/Items/Cover" unique_id=2013243475]
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Haz clic aquí para seleccionar imagen de portada..."
 
-[node name="AddButton" type="Control" parent="TabContainer/Juego/Items"]
+[node name="AddButton" type="Control" parent="TabContainer/Juego/Items" unique_id=127221254]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="TabContainer/Juego/Items/AddButton"]
+[node name="Button" type="Button" parent="TabContainer/Juego/Items/AddButton" unique_id=326192245]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -247,11 +248,11 @@ grow_vertical = 2
 focus_mode = 0
 text = "Agregar"
 
-[node name="FileDialog" type="FileDialog" parent="TabContainer/Juego/Items"]
+[node name="FileDialog" type="FileDialog" parent="TabContainer/Juego/Items" unique_id=822431085]
 auto_translate_mode = 1
 access = 2
 
-[node name="StudiosList" type="Panel" parent="TabContainer/Juego"]
+[node name="StudiosList" type="Panel" parent="TabContainer/Juego" unique_id=2100286026]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -266,7 +267,7 @@ offset_bottom = 113.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BG" type="ColorRect" parent="TabContainer/Juego/StudiosList"]
+[node name="BG" type="ColorRect" parent="TabContainer/Juego/StudiosList" unique_id=425217322]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -275,7 +276,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.784314)
 
-[node name="VBox" type="VBoxContainer" parent="TabContainer/Juego/StudiosList"]
+[node name="VBox" type="VBoxContainer" parent="TabContainer/Juego/StudiosList" unique_id=432422570]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -283,11 +284,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Cancelar" type="Control" parent="TabContainer/Juego/StudiosList/VBox"]
+[node name="Cancelar" type="Control" parent="TabContainer/Juego/StudiosList/VBox" unique_id=1568152809]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="TabContainer/Juego/StudiosList/VBox/Cancelar"]
+[node name="Button" type="Button" parent="TabContainer/Juego/StudiosList/VBox/Cancelar" unique_id=1474113685]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -302,12 +303,12 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Cancelar"
 
-[node name="Search" type="LineEdit" parent="TabContainer/Juego/StudiosList/VBox"]
+[node name="Search" type="LineEdit" parent="TabContainer/Juego/StudiosList/VBox" unique_id=818879552]
 layout_mode = 2
 placeholder_text = "Nombre del estudio"
 alignment = 1
 
-[node name="CategoriesList" type="Panel" parent="TabContainer/Juego"]
+[node name="CategoriesList" type="Panel" parent="TabContainer/Juego" unique_id=1872974394]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -322,7 +323,7 @@ offset_bottom = 175.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BG" type="ColorRect" parent="TabContainer/Juego/CategoriesList"]
+[node name="BG" type="ColorRect" parent="TabContainer/Juego/CategoriesList" unique_id=377682175]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -331,7 +332,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.784314)
 
-[node name="VBox" type="VBoxContainer" parent="TabContainer/Juego/CategoriesList"]
+[node name="VBox" type="VBoxContainer" parent="TabContainer/Juego/CategoriesList" unique_id=1760290154]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -339,11 +340,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Cerrar" type="Control" parent="TabContainer/Juego/CategoriesList/VBox"]
+[node name="Cerrar" type="Control" parent="TabContainer/Juego/CategoriesList/VBox" unique_id=992837478]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="TabContainer/Juego/CategoriesList/VBox/Cerrar"]
+[node name="Button" type="Button" parent="TabContainer/Juego/CategoriesList/VBox/Cerrar" unique_id=1316011131]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -358,31 +359,30 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Cerrar"
 
-[node name="Search" type="LineEdit" parent="TabContainer/Juego/CategoriesList/VBox"]
+[node name="Search" type="LineEdit" parent="TabContainer/Juego/CategoriesList/VBox" unique_id=53605295]
 layout_mode = 2
 placeholder_text = "Filtrar categoria"
 alignment = 1
 
-[node name="Container" type="ScrollContainer" parent="TabContainer/Juego/CategoriesList/VBox"]
+[node name="Container" type="ScrollContainer" parent="TabContainer/Juego/CategoriesList/VBox" unique_id=35520642]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="Grid" type="GridContainer" parent="TabContainer/Juego/CategoriesList/VBox/Container"]
+[node name="Grid" type="GridContainer" parent="TabContainer/Juego/CategoriesList/VBox/Container" unique_id=138560136]
 clip_contents = true
 layout_mode = 2
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 9
 columns = 4
 
-[node name="Estudio" type="Panel" parent="TabContainer"]
-visible = false
+[node name="Estudio" type="Panel" parent="TabContainer" unique_id=1583987020]
 layout_mode = 2
 script = ExtResource("4_uuyvw")
 metadata/_tab_index = 2
 
-[node name="Items" type="VBoxContainer" parent="TabContainer/Estudio"]
+[node name="Items" type="VBoxContainer" parent="TabContainer/Estudio" unique_id=1430962563]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -398,82 +398,84 @@ grow_vertical = 2
 pivot_offset = Vector2(425, 250)
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Estudio/Items"]
+[node name="Label" type="Label" parent="TabContainer/Estudio/Items" unique_id=1656621874]
 layout_mode = 2
 text = "Agregar nuevo estudio"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Name" type="HBoxContainer" parent="TabContainer/Estudio/Items"]
+[node name="Name" type="HBoxContainer" parent="TabContainer/Estudio/Items" unique_id=1629903164]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Estudio/Items/Name"]
+[node name="Label" type="Label" parent="TabContainer/Estudio/Items/Name" unique_id=986686544]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Nombre"
 horizontal_alignment = 2
 
-[node name="Input" type="LineEdit" parent="TabContainer/Estudio/Items/Name"]
+[node name="Input" type="LineEdit" parent="TabContainer/Estudio/Items/Name" unique_id=817782441]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Description" type="HBoxContainer" parent="TabContainer/Estudio/Items"]
+[node name="Description" type="HBoxContainer" parent="TabContainer/Estudio/Items" unique_id=134125500]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Estudio/Items/Description"]
+[node name="Label" type="Label" parent="TabContainer/Estudio/Items/Description" unique_id=951257347]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Descripción"
 horizontal_alignment = 2
 
-[node name="Input" type="LineEdit" parent="TabContainer/Estudio/Items/Description"]
+[node name="Input" type="LineEdit" parent="TabContainer/Estudio/Items/Description" unique_id=2024049537]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Website" type="HBoxContainer" parent="TabContainer/Estudio/Items"]
+[node name="Website" type="HBoxContainer" parent="TabContainer/Estudio/Items" unique_id=1541198562]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Estudio/Items/Website"]
+[node name="Label" type="Label" parent="TabContainer/Estudio/Items/Website" unique_id=25677630]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Sitio web"
 horizontal_alignment = 2
 
-[node name="Input" type="LineEdit" parent="TabContainer/Estudio/Items/Website"]
+[node name="Input" type="LineEdit" parent="TabContainer/Estudio/Items/Website" unique_id=1924629847]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Logo" type="HBoxContainer" parent="TabContainer/Estudio/Items"]
+[node name="Logo" type="HBoxContainer" parent="TabContainer/Estudio/Items" unique_id=2034511416]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Estudio/Items/Logo"]
+[node name="Label" type="Label" parent="TabContainer/Estudio/Items/Logo" unique_id=1232079301]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Logo"
 horizontal_alignment = 2
 
-[node name="Input" type="LineEdit" parent="TabContainer/Estudio/Items/Logo"]
+[node name="Input" type="LineEdit" parent="TabContainer/Estudio/Items/Logo" unique_id=330264457]
 layout_mode = 2
 size_flags_horizontal = 3
+placeholder_text = "Haz clic aquí para seleccionar una imagen..."
 
-[node name="Cover" type="HBoxContainer" parent="TabContainer/Estudio/Items"]
+[node name="Cover" type="HBoxContainer" parent="TabContainer/Estudio/Items" unique_id=356053881]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Estudio/Items/Cover"]
+[node name="Label" type="Label" parent="TabContainer/Estudio/Items/Cover" unique_id=44168386]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Portada"
 horizontal_alignment = 2
 
-[node name="Input" type="LineEdit" parent="TabContainer/Estudio/Items/Cover"]
+[node name="Input" type="LineEdit" parent="TabContainer/Estudio/Items/Cover" unique_id=1005813475]
 layout_mode = 2
 size_flags_horizontal = 3
+placeholder_text = "Haz clic aquí para seleccionar una imagen..."
 
-[node name="AddButton" type="Control" parent="TabContainer/Estudio/Items"]
+[node name="AddButton" type="Control" parent="TabContainer/Estudio/Items" unique_id=1151944835]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="TabContainer/Estudio/Items/AddButton"]
+[node name="Button" type="Button" parent="TabContainer/Estudio/Items/AddButton" unique_id=1571184728]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -489,17 +491,17 @@ grow_vertical = 2
 focus_mode = 0
 text = "Agregar"
 
-[node name="FileDialog" type="FileDialog" parent="TabContainer/Estudio/Items"]
+[node name="FileDialog" type="FileDialog" parent="TabContainer/Estudio/Items" unique_id=63179760]
 auto_translate_mode = 1
 access = 2
 
-[node name="Categorias" type="Panel" parent="TabContainer"]
+[node name="Categorias" type="Panel" parent="TabContainer" unique_id=1422627676]
 visible = false
 layout_mode = 2
 script = ExtResource("5_l646j")
 metadata/_tab_index = 3
 
-[node name="Selected" type="HBoxContainer" parent="TabContainer/Categorias"]
+[node name="Selected" type="HBoxContainer" parent="TabContainer/Categorias" unique_id=775719558]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -509,51 +511,51 @@ grow_horizontal = 2
 theme_override_constants/separation = 25
 alignment = 1
 
-[node name="Option" type="VBoxContainer" parent="TabContainer/Categorias/Selected"]
+[node name="Option" type="VBoxContainer" parent="TabContainer/Categorias/Selected" unique_id=1080571623]
 layout_mode = 2
 alignment = 1
 
-[node name="New" type="Button" parent="TabContainer/Categorias/Selected/Option"]
+[node name="New" type="Button" parent="TabContainer/Categorias/Selected/Option" unique_id=547921069]
 layout_mode = 2
 disabled = true
 text = "Nueva"
 
-[node name="Selected" type="Button" parent="TabContainer/Categorias/Selected/Option"]
+[node name="Selected" type="Button" parent="TabContainer/Categorias/Selected/Option" unique_id=1677346292]
 layout_mode = 2
 text = "Seleccionada"
 
-[node name="Names" type="VBoxContainer" parent="TabContainer/Categorias/Selected"]
+[node name="Names" type="VBoxContainer" parent="TabContainer/Categorias/Selected" unique_id=1394845244]
 layout_mode = 2
 alignment = 1
 
-[node name="NameLine" type="LineEdit" parent="TabContainer/Categorias/Selected/Names"]
+[node name="NameLine" type="LineEdit" parent="TabContainer/Categorias/Selected/Names" unique_id=433296987]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 placeholder_text = "Nombre visible"
 alignment = 1
 
-[node name="IDLine" type="LineEdit" parent="TabContainer/Categorias/Selected/Names"]
+[node name="IDLine" type="LineEdit" parent="TabContainer/Categorias/Selected/Names" unique_id=1347657273]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 placeholder_text = "ID"
 alignment = 1
 
-[node name="Buttons" type="VBoxContainer" parent="TabContainer/Categorias/Selected"]
+[node name="Buttons" type="VBoxContainer" parent="TabContainer/Categorias/Selected" unique_id=1331844779]
 custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 alignment = 1
 
-[node name="ColorButton" type="ColorPickerButton" parent="TabContainer/Categorias/Selected/Buttons"]
+[node name="ColorButton" type="ColorPickerButton" parent="TabContainer/Categorias/Selected/Buttons" unique_id=1327881170]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_d1530")
 text = "Prueba"
 edit_alpha = false
 
-[node name="AddSave" type="Button" parent="TabContainer/Categorias/Selected/Buttons"]
+[node name="AddSave" type="Button" parent="TabContainer/Categorias/Selected/Buttons" unique_id=1685761136]
 layout_mode = 2
 text = "CREAR"
 
-[node name="Scroll" type="ScrollContainer" parent="TabContainer/Categorias"]
+[node name="Scroll" type="ScrollContainer" parent="TabContainer/Categorias" unique_id=719490731]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -563,7 +565,7 @@ offset_top = -370.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Grid" type="GridContainer" parent="TabContainer/Categorias/Scroll"]
+[node name="Grid" type="GridContainer" parent="TabContainer/Categorias/Scroll" unique_id=77713109]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 2
@@ -571,7 +573,7 @@ theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 5
 columns = 4
 
-[node name="Close" type="Button" parent="."]
+[node name="Close" type="Button" parent="." unique_id=350773996]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
