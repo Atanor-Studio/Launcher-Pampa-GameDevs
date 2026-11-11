@@ -15,12 +15,12 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Launcher Pampa GameDevs"
-config/version="0.1"
+config/version="0.2.0"
 run/main_scene="uid://dysybabi04p0g"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/stretch_mode=0
 boot_splash/image="uid://bqs58ylv4gkm4"
-config/icon="res://icon.svg"
+config/icon="uid://cd8gynmdvqk1n"
 boot_splash/minimum_display_time=500
 
 [autoload]
@@ -39,5 +39,6 @@ window/stretch/aspect="expand"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=2
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

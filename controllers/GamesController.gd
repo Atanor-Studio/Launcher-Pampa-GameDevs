@@ -135,8 +135,8 @@ func remove_game(game_id: String) -> bool:
 	return remove_item(game_id)
 
 func launch_game(game: Game):
-	if game.exe_path != "" and FileAccess.file_exists(game.exe_path):
-		var executablePath: String = AppConfig.get_launcher_directory() + "/" + game.exe_path
+	var executablePath: String = FileUtils.resolve_path(game.exe_path)
+	if executablePath != "" and FileAccess.file_exists(executablePath):
 		DebugUtils.info("Lanzando juego: " + game.name + " desde: " + executablePath)
 		var processId: int = OS.create_process(executablePath, [])
 	
@@ -144,4 +144,4 @@ func launch_game(game: Game):
 			push_error("Error al lanzar el juego: " + executablePath)
 			return
 	else:
-		DebugUtils.error("Ejecutable del juego no encontrado: " + game.exe_path)
+		DebugUtils.error("Ejecutable del juego no encontrado: " + executablePath)

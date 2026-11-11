@@ -4,16 +4,16 @@ const ITEM_ENTRY_SCENE = preload("uid://5dn18av3mq22")
 
 # Referencias a nodos de la UI
 @onready var cont: HBoxContainer = $Cont
-@onready var name_label: Label = $Cont/Panel/VBox/Name
-@onready var description_label: Label = $Cont/Panel/VBox/Description
-@onready var studio_container: Control = $Cont/Panel/VBox/Studio
-@onready var studio_logo: TextureRect = $Cont/Panel/VBox/Studio/HBox/Logo
-@onready var studio_button: Button = $Cont/Panel/VBox/Studio/HBox/NameButton
+@onready var name_label: Label = $Cont/Panel/VBoxContainer/VBox/Name
+@onready var description_label: Label = $Cont/Panel/VBoxContainer/VBox/Description
+@onready var studio_container: Control = $Cont/Panel/VBoxContainer/VBox/Studio
+@onready var studio_logo: TextureRect = $Cont/Panel/VBoxContainer/VBox/Studio/HBox/Logo
+@onready var studio_button: Button = $Cont/Panel/VBoxContainer/VBox/Studio/HBox/NameButton
 @onready var categories: Control = $Cont/Categories
 @onready var categories_panel_container: PanelContainer = $Cont/Categories/Container
 @onready var categories_container: VBoxContainer = $Cont/Categories/Container/VBox/List
-@onready var games_container: HBoxContainer = $Cont/Panel/VBox/Games/HBox
-@onready var cover_image: TextureRect = $Cont/Panel/Cover
+@onready var games_container: HBoxContainer = $Cont/Panel/VBoxContainer/VBox/Games/HBox
+@onready var cover_image: TextureRect = $Cont/Panel/VBoxContainer/Cover
 @onready var close_button: Button = $Cont/Panel/Close
 @onready var play_button: Button = $Cont/Panel/Play
 

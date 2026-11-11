@@ -77,7 +77,7 @@ static func get_image_filters() -> Array:
 	]
 
 static func convert_to_relative_path(absolute_path: String) -> String:
-	var launcher_dir = AppConfig.get_launcher_directory()
+	var launcher_dir = ProjectSettings.globalize_path(AppConfig.get_launcher_directory())
 	
 	# Normalizar ambas rutas
 	var normalized_absolute = absolute_path.replace("\\", "/")
